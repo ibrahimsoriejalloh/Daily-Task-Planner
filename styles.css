@@ -1,0 +1,302 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(37, 117, 252, 0.5), rgba(255, 0, 150, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-attachment: fixed;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Task Input Section */
+.task-input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.task-input input, .task-input select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.task-input input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus Effect */
+.task-input input:focus, .task-input select:focus {
+    border-color: #2575fc;
+}
+
+/* Add Task Button */
+.task-input button {
+    padding: 12px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.task-input select {
+    appearance: none; /* Hides default arrow in some browsers */
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Remove transparency when clicked */
+.task-input select:focus,
+.task-input select:hover {
+    background: rgba(255, 255, 255, 1); /* Fully visible background */
+    color: black; /* Make text readable */
+}
+
+
+.task-input button:hover {
+    background: #1a5bbf;
+}
+
+/* Search Bar */
+.search-bar input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    width: 95%;
+}
+
+.search-bar input:focus {
+    border-color: #2575fc;
+}
+
+/* Task List */
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    width: 95%;
+}
+
+.task-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-list li.completed {
+    background: #e8f5e9;
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list li .task-info {
+    flex: 1;
+}
+
+.task-list li .task-info .countdown {
+    font-size: 0.9rem;
+    color: #ff6b6b;
+}
+
+.task-list li .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-list li .actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.task-list li .actions button.edit {
+    background: #ffc107;
+    color: #fff;
+}
+
+.task-list li .actions button.done {
+    background: #28a745;
+    color: #fff;
+}
+
+.task-list li .actions button.delete {
+    background: #dc3545;
+    color: #fff;
+}
+
+.task-list li .actions button:hover {
+    opacity: 0.9;
+}
+
+/* Clear All Button */
+#clear-all {
+    width: 100%;
+    padding: 12px;
+    background: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#clear-all:hover {
+    background: #c82333;
+}
+
+/* Add this to your existing CSS */
+.task-input select#alert-sound {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.task-input select#alert-sound:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+/* Button Styling */
+#clear-all {
+    width: 100%;
+    padding: 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#clear-all:hover {
+    background: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgb(236, 236, 236);
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#close-alert {
+    padding: 10px 20px;
+    background: #2575fc;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-alert:hover {
+    background: #1a5bbf;
+}
+
+
+

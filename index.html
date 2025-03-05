@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Task Planner ⏰</h1>
+        <div class="task-input">
+            <input type="text" id="task" placeholder="Enter a task">
+            <input type="time" id="time">
+            <input type="date" id="date">
+            <select id="priority">
+                <option value="#">Priority</option>
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <select id="alert-sound" >
+                <option value="#">Choose Sound</option>
+                <option value="audio/alert1.mp3">Alert Sound 1</option>
+                <option value="audio/alert2.mp3">Alert Sound 2</option>
+                <option value="audio/alert3.mp3">Alert Sound 3</option>
+                <option value="audio/alert4.mp3">Alert Sound 4</option>
+                <option value="audio/alert5.mp3">Alert Sound 5</option>
+                <option value="audio/alert6.mp3">Alert Sound 6</option>
+
+            </select>
+            <button id="add-task">Add Task</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search tasks...">
+        </div>
+        <div class="task-list">
+            <ul id="tasks"></ul>
+        </div>
+        <button id="clear-all">Clear All Tasks</button>
+    </div>
+
+    <!-- Modal for Alerts -->
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <span id="alert-message"></span>
+            <button id="close-alert">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
